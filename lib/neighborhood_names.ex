@@ -8,7 +8,7 @@ defmodule NeighborhoodNames do
   """
 
   # final
-  @place_names ~w(park place ridge heights grove villas cove woods village chase club hollow valey) ++
+  @place_names ~w(park place ridge heights grove villas cove woods village chase club hollow valley) ++
                  ["country club"]
   @water_names ~w(river stream bay mill bayou lake crossing water glen)
 
@@ -18,12 +18,12 @@ defmodule NeighborhoodNames do
   @possessives ~w(smuggler's pirate's trader's king's queen's admiral's captain's skipper's)
 
   # prefixes
-  @color_prefix ~w(blue green orange pink black silver)
+  @color_prefix ~w(blue green orange black silver)
   @articles ~w(the)
-  @adjectives ~w(grassy quiet still calm dancing whispering winding victorian old new majestic)
+  @adjectives ~w(grassy quiet still calm dancing whispering winding victorian old)
 
   def generate() do
-    color_prefix =
+    prefix =
       case Enum.random(0..9) do
         n when n < 2 ->
           Enum.random(@color_prefix) <> " "
@@ -47,6 +47,13 @@ defmodule NeighborhoodNames do
           Enum.random(@nature_names ++ @animal_names ++ @possessives)
       end
 
-    color_prefix <> modifier <> " " <> Enum.random(@place_names ++ @water_names)
+    prefix =
+      if prefix == "" && modifier == "" do
+        "the"
+      else
+        prefix
+      end
+
+    prefix <> modifier <> " " <> Enum.random(@place_names ++ @water_names)
   end
 end
