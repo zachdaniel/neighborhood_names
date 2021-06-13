@@ -1,0 +1,6 @@
+<h1>
+  Here is your Neighborhood Name
+</h1>
+<h2>
+  <%= NeighborhoodNames.generate() %>
+</h2>
