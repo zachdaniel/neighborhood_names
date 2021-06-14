@@ -8,19 +8,19 @@ defmodule NeighborhoodNames do
   """
 
   # final
-  @place_names ~w(park place ridge heights grove villas cove woods village chase club hollow valley) ++
+  @place_names ~w(park place ridge heights grove villas cove woods village chase club hollow valley university) ++
                  ["country club"]
   @water_names ~w(river stream bay mill bayou lake crossing water glen)
 
   # secondary
-  @nature_names ~w(palm pine willow oak elm maple country coastal)
+  @nature_names ~w(palm pine willow oak elm maple country coast)
   @animal_names ~w(flamingo cougar dolphin panther heron)
   @possessives ~w(smuggler's pirate's trader's king's queen's admiral's captain's skipper's)
 
   # prefixes
   @color_prefix ~w(blue green orange black silver)
   @articles ~w(the)
-  @adjectives ~w(grassy quiet still calm dancing whispering winding victorian old)
+  @adjectives ~w(grassy quiet still calm dancing whispering winding victorian old university)
 
   def generate() do
     prefix =
